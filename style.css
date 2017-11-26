@@ -1,0 +1,412 @@
+body{
+  background: #cccccc;
+  padding: 2em;
+}
+
+article{
+  margin: 0 auto;
+  width:100%;
+  max-width: 650px;
+  
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.blur{
+  color: transparent !important;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  
+  img{
+    -webkit-filter: blur(10px);
+  }
+  
+  .button{
+    color: transparent !important;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border-color: rgba(0,0,0,0.1);
+  }
+}
+
+.title--main{
+  font-size: 30px;
+  text-align: center;
+}
+
+.title--sub{
+  font-size: 25px;
+}
+
+.content__image{
+  max-width: 30%;
+  padding-bottom: 20px;
+}
+
+.image--right{
+  float: right;
+  padding-left: 20px;
+}
+
+.image--left{
+  float: left;
+  padding-right: 20px;
+}
+
+.content__footer{
+  display: block;
+  margin: 40px 0;
+}
+
+svg{
+  width: 300px;
+}
+
+.imgRow{
+  figure{
+    width: 45%;
+    margin: 2%;
+    display: inline-block;
+    text-align: center;
+    
+    img{
+      width: 100%;
+    }
+  }
+}
+
+.splashFigure{
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  
+  img{
+    width: 100%;
+  }
+}
+
+/* Accessibility Panel */
+
+.accessible-font{
+  font-family: "Helvetica", Arial, sans-serif;
+}
+
+.fontsize-1{
+  font-size: 18px;
+}
+
+.fontsize-2{
+  font-size: 24px;
+}
+
+.fontsize-3{
+  font-size: 30px;
+}
+
+.fontsize-4{
+  font-size: 36px;
+}
+
+a, a:hover, a:focus, a:visited{
+  color: inherit;
+  
+  &.highlight{
+    background: #ffff00;
+    padding: 0.5em;
+    line-height: 1.5;
+  }
+  
+}
+
+.accessibility-panel{
+  width: 400px;
+  height: 100%;
+  background: #f9f9f9;
+  border-color:#ddd;
+  box-shadow:0 0 15px rgba(0,0,0,0.1);
+  padding: 1em;
+  font-size: 24px;
+  color: #555555;
+  position: fixed;
+  font-family: "Helvetica", Arial, sans-serif;
+  top: 0;
+  right: -400px;
+  transition: all 0.3s ease;
+
+  @keyframes fadein{
+    0% { opacity:0; }
+    66% { opacity:0; }
+    100% { opacity:1; }
+  }
+
+  @-webkit-keyframes fadein{
+    0% { opacity:0; }
+    66% { opacity:0; }
+    100% { opacity:1; }
+  }
+  
+  
+  &.visible{
+    right: 0;
+    overflow-y: scroll;    
+  }
+  
+  #toggleAccessPanel{
+    position: absolute;
+    right: 410px;
+    top: 8px;
+    width: 48px;
+    max-height: 48px;
+    padding: 0;
+    background: #090091;
+    color: #fff;
+    font-size: 13px;
+    line-height: 0.75;
+    text-align: left;
+    overflow: hidden;
+    border: none;
+    border-radius: 3em;
+    padding: 12px 5px 6px;
+    -webkit-box-shadow: 0 4px 18px 0 rgba(0, 0, 0, .25);
+            box-shadow: 0 4px 18px 0 rgba(0, 0, 0, .25);
+    -webkit-transition: width 0.75s ease-in-out, box-shadow 0.75s ease-in-out;; /* Safari */
+    transition: width 0.75s ease-in-out, box-shadow 0.75s ease-in-out;
+      
+    .ada-icon{
+      padding: 2px 6px;
+      line-height: 1;
+      float:left;
+      position: static;
+      display: block;
+      
+      svg{
+        width: 26px;
+      }
+      path{
+        fill: #ffffff;
+      }
+    }
+    
+    &:focus, &:hover{
+      width: 250px !important;
+      -webkit-box-shadow: 0 12px 12px 0 rgba(0, 0, 0, .25) !important;
+      box-shadow: 0 12px 12px 0 rgba(0, 0, 0, .25) !important;
+      
+      .toggleAccessPanelLabelInstruct{
+        height: auto;
+        width: auto;
+        position: static;
+        margin: auto;
+        -webkit-animation: 1.25s ease 0s normal forwards 1 fadein;
+        animation: 1.25s ease 0s normal forwards 1 fadein;
+      }
+      
+    }
+    
+    .toggleAccessPanelLabelInstruct{
+      position: absolute;
+      left: -999px;
+      width:1px;
+      height: 1px;
+      top: auto;
+      opacity: 0;
+      pointer-events: none;
+      
+      
+      .toggleAccessPanelLabel{
+        font-weight: 800;
+      }
+
+      .toggleAccessPanelInstructions{
+        line-height:2;
+      }
+      
+    }
+    
+  }
+  
+  h6{
+    margin: 0;
+  }
+}
+
+.button-group{
+  font-size: 16px;
+  margin-bottom: 1em;
+}
+
+.button-group button{
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 1.25em;
+  border: 1px solid #555555;
+  background: #555555;
+  color: #ffffff;
+  -webkit-transition: width 0.75s ease-in-out, box-shadow 0.75s ease-in-out;; /* Safari */
+    transition: width 0.75s ease-in-out, box-shadow 0.75s ease-in-out;
+  
+    &:focus, &:hover{
+      -webkit-box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .25) !important;
+      box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .25) !important;
+}
+  
+}
+
+.rangeSliders p{
+  float: left;
+  display: inline-block;
+  width: 75px;
+  margin: 2px 0 0;
+  font-size: 16px;
+}
+
+.button{
+  display: inline-block;
+  padding: 10px 15px;
+  color: #000;
+  border: 2px solid #000;
+  transition: 0.3s all ease;
+  font-weight: 700;
+  background: transparent;
+  text-decoration: none;
+  
+  &:hover{
+    color: #fff;
+    background-color: #000;
+    border-color: #fff;
+  }
+  
+  &.highlight{
+    background: #ffff00;
+    padding: 0.5em;
+    line-height: 1.5;
+  }
+}
+
+.hidden{
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  display: inline;
+  font-size: 0;
+}
+
+$track-color: #f9f9f9 !default;
+$thumb-color: #555555 !default;
+
+$thumb-radius: 12px !default;
+$thumb-height: 24px !default;
+$thumb-width: 24px !default;
+$thumb-shadow-size: 4px !default;
+$thumb-shadow-blur: 4px !default;
+$thumb-shadow-color: rgba(0, 0, 0, .2) !default;
+$thumb-border-width: 2px !default;
+$thumb-border-color: #f9f9f9 !default;
+
+$track-width: 80% !default;
+$track-height: 8px !default;
+$track-shadow-size: 1px !default;
+$track-shadow-blur: 1px !default;
+$track-shadow-color: rgba(0, 0, 0, .2) !default;
+$track-border-width: 2px !default;
+$track-border-color: #555555 !default;
+
+$track-radius: 5px !default;
+$contrast: 5% !default;
+
+@mixin shadow($shadow-size, $shadow-blur, $shadow-color) {
+  box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color, 0 0 $shadow-size lighten($shadow-color, 5%);
+}
+
+@mixin track {
+  cursor: pointer;
+  height: $track-height;
+  transition: all .2s ease;
+  width: $track-width;
+}
+
+@mixin thumb {
+  @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
+  background: $thumb-color;
+  border: $thumb-border-width solid $thumb-border-color;
+  border-radius: $thumb-radius;
+  cursor: pointer;
+  height: $thumb-height;
+  width: $thumb-width;
+}
+
+[type='range'] {
+  -webkit-appearance: none;
+  margin: $thumb-height / 2 0;
+  width: $track-width;
+
+  &:focus {
+
+    &::-webkit-slider-runnable-track {
+      background: lighten($track-color, $contrast);
+    }
+
+    &::-ms-fill-lower {
+      background: $track-color;
+    }
+
+    &::-ms-fill-upper {
+      background: lighten($track-color, $contrast);
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include track;
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+  }
+
+  &::-webkit-slider-thumb {
+    @include thumb;
+    -webkit-appearance: none;
+    margin-top: ((-$track-border-width * 2 + $track-height) / 2) - ($thumb-height / 2);
+  }
+
+  &::-moz-range-track {
+    @include track;
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+  }
+
+  &::-moz-range-thumb {
+    @include thumb;
+  }
+
+  &::-ms-track {
+    @include track;
+    background: transparent;
+    border-color: transparent;
+    border-width: ($thumb-height / 2) 0;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    background: darken($track-color, $contrast);
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+  }
+
+  &::-ms-fill-upper {
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+  }
+
+  &::-ms-thumb {
+    @include thumb;
+    margin-top: 0;
+  }
+}
